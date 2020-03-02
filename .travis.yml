@@ -4,8 +4,10 @@ services:
 
 before_install:
   - docker build -t dinesh1/docker-react -f Dockerfile.dev .
+
 script:
   - docker run dinesh1/docker-react npm run test -- --coverage
+
 deploy:
   edge: true
   provider: elasticbeanstalk
